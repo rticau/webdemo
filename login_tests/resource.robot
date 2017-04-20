@@ -7,14 +7,17 @@ Documentation     A resource file with reusable keywords and variables.
 Library           Selenium2Library
 
 *** Variables ***
-${SERVER}         localhost:7272
-${BROWSER}        Firefox
-${DELAY}          0
-${VALID USER}     demo
-${VALID PASSWORD}    mode
-${LOGIN URL}      http://${SERVER}/
-${WELCOME URL}    http://${SERVER}/welcome.html
-${ERROR URL}      http://${SERVER}/error.html
+${SERVER}            10.181.50.202
+${BROWSER}           chrome
+${DELAY}             0.5
+${VALID USER}        Anna
+${VALID PASSWORD}    test
+${LOGIN URL}         http://${SERVER}/login
+${WELCOME URL}       http://${SERVER}/home
+${PAGE_TITLE}        SkyLab X - Customer Documentation
+${ERROR MESSAGE1}    User could not be found
+${ERROR MESSAGE2}    Invalid login credentials
+${SUBMIT BUTTON}     xpath=/html/body/app-root/skylab-authentification/div/form/button
 
 *** Keywords ***
 Open Browser To Login Page
@@ -24,7 +27,7 @@ Open Browser To Login Page
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Title Should Be    Login Page
+    Title Should Be    ${PAGE_TITLE}
 
 Go To Login Page
     Go To    ${LOGIN URL}
@@ -32,15 +35,17 @@ Go To Login Page
 
 Input Username
     [Arguments]    ${username}
-    Input Text    username_field    ${username}
+    Input Text    username    ${username}
 
 Input Password
     [Arguments]    ${password}
-    Input Text    password_field    ${password}
+    Input Text    passsword    ${password}
 
 Submit Credentials
-    Click Button    login_button
+    # Click Button    login_button
+    # Press Key  passsword  \\13
+    Click Button  ${SUBMIT BUTTON}
 
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
-    Title Should Be    Welcome Page
+    Title Should Be       ${PAGE_TITLE}
