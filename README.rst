@@ -12,31 +12,6 @@ are executed, and how logs and reports look like.
    :depth: 1
    :local:
 
-Downloading demo package
-========================
-
-To get the demo, you can either download and extract the latest
-``WebDemo-<date>.zip`` package from the `download page`_ or checkout the
-`source code`_ directly. As a result you get ``WebDemo`` directory with
-``demoapp`` and ``login_tests`` sub directories.
-
-Example `test cases`_ and `generated results`_ are available also online.
-There is thus no need to download the demo if you are not interested in
-`running it`__ yourself.
-
-__ `running demo`_
-
-Demo application
-================
-
-The demo application is a very simple login page shown below. With
-user name ``demo`` and password ``mode`` you get into a welcome page, and
-otherwise you end up to an error page. How to start and stop the
-application yourself is explained in the `Starting demo application`_
-section.
-
-.. figure:: demoapp.png
-
 Test cases
 ==========
 
@@ -59,12 +34,6 @@ online.
 
     This suite also demonstrates using setups and teardowns in
     different levels.
-
-`gherkin_login.robot`_
-    A test suite with a single Gherkin style test.
-
-    This test is functionally identical to the example in the
-    `valid_login.robot`_ file.
 
 `resource.robot`_
     A resource file with reusable keywords and variables.
@@ -108,25 +77,6 @@ these commands::
 __ https://github.com/robotframework/robotframework/blob/master/INSTALL.rst
 __ https://github.com/robotframework/Selenium2Library/blob/master/INSTALL.rst
 
-Starting demo application
--------------------------
-
-Running tests requires the `demo application`_ located under ``demoapp``
-directory to be running.  It can be started either by double clicking
-``demoapp/server.py`` file in a file manager or by executing it from the
-command line::
-
-    python demoapp/server.py
-
-After the demo application is started, it is be available in URL
-http://localhost:7272. You can test it manually, valid credentials are
-``demo/mode``, and it needs to be running while executing the automated
-tests.
-
-If the application was started by double-clicking ``demoapp/server.py``
-file, it can be shut down by closing the opened window. If it was
-executed from the command line, using ``Ctrl-C`` is enough.
-
 Running tests
 -------------
 
@@ -167,10 +117,4 @@ installed before they can be used with Selenium and Selenium2Library.
 .. _pip: http://pip-installer.org
 .. _download page: https://bitbucket.org/robotframework/webdemo/downloads
 .. _source code: https://bitbucket.org/robotframework/webdemo/src
-.. _valid_login.robot: https://bitbucket.org/robotframework/webdemo/src/master/login_tests/valid_login.robot
-.. _invalid_login.robot: https://bitbucket.org/robotframework/webdemo/src/master/login_tests/invalid_login.robot
-.. _gherkin_login.robot: https://bitbucket.org/robotframework/webdemo/src/master/login_tests/gherkin_login.robot
-.. _resource.robot: https://bitbucket.org/robotframework/webdemo/src/master/login_tests/resource.robot
-.. _report.html: http://robotframework.bitbucket.org/WebDemo/report.html
-.. _log.html: http://robotframework.bitbucket.org/WebDemo/log.html
 .. _Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
