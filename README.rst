@@ -118,3 +118,7 @@ installed before they can be used with Selenium and Selenium2Library.
 .. _download page: https://bitbucket.org/robotframework/webdemo/downloads
 .. _source code: https://bitbucket.org/robotframework/webdemo/src
 .. _Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
+
+
+Something else
+==============
